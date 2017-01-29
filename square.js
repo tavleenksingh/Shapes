@@ -10,7 +10,7 @@ function Square(side){
 
 	// Ensuring users get the result of a new call, even if they forget.
 	if(!(this instanceof Square)){
-    return new Square(side)
+    return new Square(side);
   }
 
 	this.side = side;
@@ -18,7 +18,10 @@ function Square(side){
 }
 
 
+// this is done so that Sqaure objects can inherit the properties defined on Shapes prototype
 Square.prototype = new Shapes();
+
+// ensuring Square objects know they are Square
 Square.prototype.constructor = Square;
 
 

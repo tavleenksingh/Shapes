@@ -3,13 +3,13 @@
 // requiring Shapes constructor
 var Shapes = require('./Shapes.js');
 
-// constructor function for creating triangle objects
+// constructor function for creating pentagon objects
 
 function Pentagon(side1, side2, side3, side4, side5){
 
 	// Ensuring users get the result of a new call, even if they forget.
 	if(!(this instanceof Pentagon)){
-    return new Pentagon(side1,side2, side3, side4, side5)
+    return new Pentagon(side1,side2, side3, side4, side5);
   }
 
 	this.side1 = side1;
@@ -22,7 +22,10 @@ function Pentagon(side1, side2, side3, side4, side5){
 
 }
 
+// this is done so that Pentagon objects can inherit the properties defined on Shapes prototype
 Pentagon.prototype = new Shapes();
+
+// ensuring Pentagon objects know they are Pentagon
 Pentagon.prototype.constructor = Pentagon;
 
 

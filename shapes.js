@@ -10,12 +10,12 @@ function Shapes(type){
     return new Shapes(type);
   }
 	this.type = type;
-  };
+  }
 
-// declaring methods on the prototype is more memory efficient.
+// declaring methods on the prototype is more memory efficient and also other objects can iherit this property
 Shapes.prototype.get_type = function(){
-		return this.type;
-}
+		return console.log("The type of this object is: " + this.type);
+};
 
 // exporting our Shapes constructor. We will require it in test.js
 module.exports = Shapes;
